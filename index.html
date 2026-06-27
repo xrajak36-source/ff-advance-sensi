@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF Advance Sensi</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d0d0d;
+color:white;
+}
+
+header{
+background:#111;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:2px solid #ff2d55;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#ff2d55;
+}
+
+.menu{
+font-size:30px;
+cursor:pointer;
+}
+
+.card{
+width:90%;
+margin:25px auto;
+background:#171717;
+border-radius:18px;
+padding:20px;
+box-shadow:0 0 20px rgba(255,0,80,.3);
+}
+
+h1{
+font-size:34px;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:15px;
+margin:12px 0;
+background:#222;
+border:none;
+border-radius:10px;
+color:white;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:16px;
+background:linear-gradient(90deg,#ff3c00,#ff006a);
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+background:#111;
+padding:15px;
+border-radius:12px;
+line-height:32px;
+display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">FF Advance Sensi</div>
+<div class="menu">☰</div>
+</header>
+
+<div class="card">
+
+<h1>⚡ Sensi Generator</h1>
+
+<input type="text" id="model" placeholder="Enter Device Model">
+
+<input type="number" id="age" placeholder="Device Age">
+
+<button onclick="generate()">
+GENERATE BEST SENSI
+</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+
+function r(min,max){
+return Math.floor(Math.random()*(max-min+1))+min;
+}
+
+function generate(){
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("result").innerHTML=`
+<b>General :</b> ${r(180,200)}<br>
+<b>Red Dot :</b> ${r(170,190)}<br>
+<b>2X Scope :</b> ${r(160,180)}<br>
+<b>4X Scope :</b> ${r(140,170)}<br>
+<b>Sniper :</b> ${r(40,60)}<br>
+<b>Free Look :</b> ${r(65,90)}
+`;
+
+}
+
+</script>
+
+</body>
+</html>
